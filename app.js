@@ -32,7 +32,7 @@ const menu = [
       category: "China",
       price: 5.99,
       img:
-        "https://www.savingdessert.com/wp-content/uploads/2019/02/Dan-Dan-Noodles-10.jpg",
+        "https://images.unsplash.com/photo-1555126634-323283e090fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80",
       desc: `Dan dan noodle, serving with green onion `,
     },
     {
@@ -110,8 +110,83 @@ for ( var i in menu)
 console.log(koreMenu)
 
 const sectionCenter = document.querySelector(".section-center");
+const buttonContainer = document.querySelector(".btn-container");
+
+buttonContainer.innerHTML =`
+<button class="btn-item" id="all"> All </button>
+<button class="btn-item" id="korea"> Korea</button>
+<button class="btn-item" id="japan"> Japan</button>
+<button class="btn-item" id="china"> China</button>`
 
 
+// ALL 
 
+const allBtn = document.querySelector("#all")
+allBtn.addEventListener ("click",createMenuItems)
 
+function createMenuItems () {
+  let createMenu = menu.map(function(item) {
+    return `    <div>
+    <h4 class="menu-title">${item.title}>
+    
+  </div>
+  <div>
+    <h4 class="menu-title menu-info">
+      <img class="photo" src="${item.img}" alt="">
+      <div>${item.price}</div>
+    </h4>
+    <div class="menu-info menu-text">${item.desc}</div>
+  </div>`
 
+  })
+  sectionCenter.innerHTML=createMenu
+}
+
+window.addEventListener("DOMContentLoaded",function(){
+  createMenuItems(menu);
+})
+
+// KOREA
+const koreaBtn = document.querySelector("#korea")
+koreaBtn.addEventListener("click",createKoreaMenu)
+
+function createKoreaMenu() {
+  let korea = koreMenu.map(function (item) {
+    return `<img src=${item.img} alt=${item.title} />`
+  })
+  sectionCenter.innerHTML=korea
+}
+
+// CHINA
+const chinaBtn = document.querySelector("#china")
+chinaBtn.addEventListener("click",createChinaMenu)
+
+function createChinaMenu() {
+  let china = chinaMenu.map(function(item){
+    return `<img src=${item.img} alt=${item.title} />`
+  })
+  sectionCenter.innerHTML=china;
+}
+
+// JAPAN
+const japanBtn = document.querySelector("#japan")
+japanBtn.addEventListener("click",createJapanMenu)
+
+function createJapanMenu() {
+  let japan = japanMenu.map(function(item){
+
+        return `
+        <h4 class="menu-title">
+        <div class="title">${item.title}</div>
+        </h4>
+          <img class="photo" src="${item.img}" alt="">
+        </div>
+        <div>
+          <h3 class="menu-info">
+            <div>${item.price}</div>
+          </h3>
+          <div class="menu-info menu-text">${item.desc}</div>
+        </div>`
+  })
+  sectionCenter.innerHTML=japan;
+}
