@@ -25,8 +25,16 @@ h2 {
   align-items: center;
   margin: 40px 0;
 }
+
 .btn-item {
   margin-left: 15px;
+  border-radius: 4px;
+  padding: 10px;
+  border: 2px solid #941717;
+}
+
+.btn-item:hover{
+  background-color: rgb(145, 124, 124);
 }
 
 .photo {
@@ -36,24 +44,35 @@ h2 {
   border: 0.25rem solid black;
   border-radius: 10px;
 }
+
 .menu-items {
   display: flex;
-  margin: 20px 0;
+  margin: auto;
 }
+
 .menu-info {
   margin-left: 20px;
   width: 100%;
 }
+
 .menu-title {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid black;
 }
 
-h4 {
-  color: #e00a00;
-}
-
 .menu-text {
   padding-top: 20px;
 }
+
+.right {
+  width: 180px;
+  float: right;
+  background: #aafed6;
+  height: max-content
+}
+
+
+
+​​
+

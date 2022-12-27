@@ -1,3 +1,4 @@
+
 const menu = [
     {
       id: 1,
@@ -100,12 +101,10 @@ for ( var i in menu) {
 console.log(chinaMenu)
 
 const koreMenu = []
-for ( var i in menu)
-{
-    if(menu[i].category=="Korea")
-    {
-        koreMenu.push(menu[i])
-    }
+for ( var i in menu){
+  if(menu[i].category=="Korea"){
+    koreMenu.push(menu[i])
+  }
 }
 console.log(koreMenu)
 
@@ -126,18 +125,24 @@ allBtn.addEventListener ("click",createMenuItems)
 
 function createMenuItems () {
   let createMenu = menu.map(function(item) {
-    return `    <div>
-    <h4 class="menu-title">${item.title}>
-    
+    return `   
+    <div class="menu-items col-lg-6 col-sm-12">
+    <img
+      src=${item.img}
+      alt=${item.title}
+      class="photo img-fluid img-thumbnail d-block w-100"
+    />
+    <div class="menu-info">
+      <div class="menu-title">
+        <h4>${item.title}</h4>
+        <h4 class="price">${item.price} $</h4>
+      </div>
+      <div class="menu-text">
+        ${item.desc}
+      </div>
+    </div>
   </div>
-  <div>
-    <h4 class="menu-title menu-info">
-      <img class="photo" src="${item.img}" alt="">
-      <div>${item.price}</div>
-    </h4>
-    <div class="menu-info menu-text">${item.desc}</div>
-  </div>`
-
+  `;
   })
   sectionCenter.innerHTML=createMenu
 }
@@ -152,7 +157,24 @@ koreaBtn.addEventListener("click",createKoreaMenu)
 
 function createKoreaMenu() {
   let korea = koreMenu.map(function (item) {
-    return `<img src=${item.img} alt=${item.title} />`
+    return `   
+    <div class="menu-items col-lg-6 col-sm-12">
+    <img
+      src=${item.img}
+      alt=${item.title}
+      class="photo img-fluid img-thumbnail d-block w-100"
+    />
+    <div class="menu-info">
+      <div class="menu-title">
+        <h4>${item.title}</h4>
+        <h4 class="price">${item.price} $</h4>
+      </div>
+      <div class="menu-text">
+        ${item.desc}
+      </div>
+    </div>
+  </div>
+  `;
   })
   sectionCenter.innerHTML=korea
 }
@@ -163,7 +185,24 @@ chinaBtn.addEventListener("click",createChinaMenu)
 
 function createChinaMenu() {
   let china = chinaMenu.map(function(item){
-    return `<img src=${item.img} alt=${item.title} />`
+    return `   
+    <div class="menu-items col-lg-6 col-sm-12">
+    <img
+      src=${item.img}
+      alt=${item.title}
+      class="photo img-fluid img-thumbnail d-block w-100"
+    />
+    <div class="menu-info">
+      <div class="menu-title">
+        <h4>${item.title}</h4>
+        <h4 class="price">${item.price} $</h4>
+      </div>
+      <div class="menu-text">
+        ${item.desc}
+      </div>
+    </div>
+  </div>
+  `;
   })
   sectionCenter.innerHTML=china;
 }
@@ -173,20 +212,25 @@ const japanBtn = document.querySelector("#japan")
 japanBtn.addEventListener("click",createJapanMenu)
 
 function createJapanMenu() {
-  let japan = japanMenu.map(function(item){
-
-        return `
-        <h4 class="menu-title">
-        <div class="title">${item.title}</div>
-        </h4>
-          <img class="photo" src="${item.img}" alt="">
+    let japan = japanMenu.map(function(item){
+      return `   
+      <div class="menu-items col-lg-6 col-sm-12">
+      <img
+        src=${item.img}
+        alt=${item.title}
+        class="photo img-fluid img-thumbnail d-block w-100"
+      />
+      <div class="menu-info">
+        <div class="menu-title">
+          <h4>${item.title}</h4>
+          <h4 class="price">${item.price} $</h4>
         </div>
-        <div>
-          <h3 class="menu-info">
-            <div>${item.price}</div>
-          </h3>
-          <div class="menu-info menu-text">${item.desc}</div>
-        </div>`
-  })
-  sectionCenter.innerHTML=japan;
-}
+        <div class="menu-text">
+          ${item.desc}
+        </div>
+      </div>
+    </div>
+    `;
+    })
+    sectionCenter.innerHTML=japan
+  }
