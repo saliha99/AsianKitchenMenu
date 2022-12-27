@@ -2,4 +2,4 @@
 
 ###### The dishes in the menu object were separated by their categories.
 
-![menu] (./menu.png)
+![menu](menu.png)
