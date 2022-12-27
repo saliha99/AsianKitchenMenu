@@ -100,13 +100,13 @@ for ( var i in menu) {
 }
 console.log(chinaMenu)
 
-const koreMenu = []
+const koreaMenu = []
 for ( var i in menu){
   if(menu[i].category=="Korea"){
-    koreMenu.push(menu[i])
+    koreaMenu.push(menu[i])
   }
 }
-console.log(koreMenu)
+console.log(koreaMenu)
 
 const sectionCenter = document.querySelector(".section-center");
 const buttonContainer = document.querySelector(".btn-container");
@@ -156,7 +156,7 @@ const koreaBtn = document.querySelector("#korea")
 koreaBtn.addEventListener("click",createKoreaMenu)
 
 function createKoreaMenu() {
-  let korea = koreMenu.map(function (item) {
+  let korea = koreaMenu.map(function (item) {
     return `   
     <div class="menu-items col-lg-6 col-sm-12">
     <img
